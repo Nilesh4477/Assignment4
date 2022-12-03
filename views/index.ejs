@@ -1,0 +1,59 @@
+
+                <%- include('partials/header.ejs')%>
+
+                <%- include('partials/nav.ejs')%>
+              
+ <div class="container-fluid ">
+              
+    <div class="row">
+                      <!-- //sidebar col-2 -->
+        <%- include('partials/sidebar.ejs')%>
+              
+                      <!-- MAIN -->
+        <div class="col-lg-10 col-md-10 col-sm-10" style="margin-top:3.3em; " >
+              
+                <div class="row mt-1">
+<!-- row col-10-->
+                          <% for(let p of prods) {%>
+                            <div class="card ml-1 col-lg-3 col-md-4 col-sm-6 mt-1" >
+                              <img src="<%= p.image %>" class="card-img-top mt-2" alt="..." style="width:100%;height: 50%;">
+                              <div class="card-body" >
+                                <p class="card-title flex"> <b style="font-size: 20px;" ><%= p.pname %></b> <span style="float:right;">ratings</span></p>
+                                <p class="my-0" name="price"><b> <%= p.price %> </b></p>
+                                <p class="my-0"><%= p.description %></p>
+                                <div class="row mt-2">
+                                    <a href="/edit/<%=p._id %>" class="btn btn-warning mt-1">edit</a>
+                                    <a href="/delete/<%=p._id %>" class="btn btn-primary m-1">delete</a>
+                                </div>
+                              </div>
+                          </div>  
+                      <%} %>
+                      
+                      
+                </div>      
+                      
+         </div> 
+                       
+              
+              
+     </div>
+</div>              
+              
+                    <%- include('partials/footer.ejs')%>  
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+              
+              
